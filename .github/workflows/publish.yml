@@ -24,7 +24,7 @@ jobs:
         with:
           source-directory: '_build/html'
           destination-github-username: 'mark-nicol'
-          destination-repository-name: 'test-public-docs-output''
+          destination-repository-name: 'test-public-docs-output'
           user-email: mark-nicol@stfc.ac.uk
           target-branch: gh-pages
           target-directory: docs
