@@ -9,7 +9,6 @@
 plantuml = 'java -jar ../lib/plantuml-1.2022.14.jar'
 
 project = 'testing out public docs'
-copyright = '2022, Mark Nicol'
 author = 'Mark Nicol'
 
 # -- General configuration ---------------------------------------------------

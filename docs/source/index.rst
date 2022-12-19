@@ -21,8 +21,7 @@ Indices and tables
 
 There should be a diagram here
 ==============================
-.. graphviz::
+.. uml::
 
-   digraph {
-      "From" -> "To";
-   }
+   Alice -> Bob: Hi!
+   Alice <- Bob: How are you?
