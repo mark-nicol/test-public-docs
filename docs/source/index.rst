@@ -21,8 +21,5 @@ Indices and tables
 
 There should be a diagram here
 ==============================
-.. uml::
-   :caption: Caption with **bold** and *italic*
-   :width: 50mm
-   .\diagrams\index.uml
+.. uml:: .\diagrams\index.uml
 
