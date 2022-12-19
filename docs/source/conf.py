@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-plantuml = 'java -jar ../lib/plantuml-1.2022.14.jar'
+#plantuml = 'java -jar ../lib/plantuml-1.2022.14.jar'
 
 project = 'testing out public docs'
 author = 'Mark Nicol'
