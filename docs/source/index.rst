@@ -19,6 +19,8 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
+There should be a diagram here
+==============================
 .. graphviz::
 
    digraph {
