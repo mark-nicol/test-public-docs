@@ -21,5 +21,5 @@ Indices and tables
 
 There should be a diagram here
 ==============================
-.. uml:: .\diagrams\index.uml
+.. uml:: ./diagrams/test.puml
 
