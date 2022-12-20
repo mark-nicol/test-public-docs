@@ -1,6 +1,7 @@
 
    @startuml
-   box  Example of a \nsimple table\n
+   box "Internal Service" #lightGray
    Alice -> Bob: Hi!
    Alice <- Bob: How are you?
+   end box
    @enduml
