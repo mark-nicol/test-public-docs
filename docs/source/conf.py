@@ -6,7 +6,10 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-plantuml = ['java', '-jar', '../utils/plantuml.jar']
+import os
+cwd = os.path.dirname(os.path.abspath(__file__))
+
+plantuml = 'java -jar ./plantuml.jar'
 
 project = 'testing out public docs'
 author = 'Mark Nicol'
