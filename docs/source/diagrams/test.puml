@@ -1,7 +1,6 @@
 
    @startuml
-   box "Internal Service" #lightGray
+   skinparam backgroundColor #EEEBDC
    Alice -> Bob: Hi!
    Alice <- Bob: How are you?
-   end box
    @enduml
