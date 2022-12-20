@@ -8,8 +8,9 @@
 
 import os
 cwd = os.path.dirname(os.path.abspath(__file__))
+os.path.join(cwd, "plantuml.jar")
 
-plantuml = 'java -jar ./plantuml.jar'
+plantuml = 'java -jar %s' % os.path.join(cwd, "plantuml.jar")
 print(cwd)
 
 project = 'testing out public docs'
