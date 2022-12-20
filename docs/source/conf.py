@@ -10,6 +10,7 @@ import os
 cwd = os.path.dirname(os.path.abspath(__file__))
 
 plantuml = 'java -jar ./plantuml.jar'
+print(cwd)
 
 project = 'testing out public docs'
 author = 'Mark Nicol'
