@@ -10,6 +10,10 @@ Welcome to perhaps some  documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   overview
+   classic OT <classic>
+   datatypes
+
 
 
 Indices and tables
