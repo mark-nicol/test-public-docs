@@ -1,5 +1,6 @@
 
    @startuml
+   box  Example of a \nsimple table\n
    Alice -> Bob: Hi!
    Alice <- Bob: How are you?
    @enduml
