@@ -3,4 +3,5 @@
    skinparam backgroundColor #EEEBDC
    Alice -> Bob: Hi!
    Alice <- Bob: How are you?
+   hide footbox
    @enduml
