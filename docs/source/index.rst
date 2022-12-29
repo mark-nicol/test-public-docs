@@ -18,8 +18,8 @@ Section
 This should have some text here
 
 
-There should be a diagram here
-==============================
+
+
 
 
 
