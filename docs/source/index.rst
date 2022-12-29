@@ -10,20 +10,18 @@ Welcome to perhaps some  documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   classic
    overview
-   classic OT <classic>
-   datatypes
 
+Section
+=======
+This should have some text here
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
 There should be a diagram here
 ==============================
-.. uml:: ./diagrams/test.puml
+
+
+
+
 

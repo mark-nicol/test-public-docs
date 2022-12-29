@@ -1,0 +1,33 @@
+@startuml test
+
+legend
+    **Description**
+
+    Each client establishes an events websocket on the server to subscribe to
+    events. This is the same channel used for other events from the services
+    that are logged on the client.
+
+    Requests for long-running tasks are sent to a message queue from where they
+    are picked up by the back end processing.
+
+    When any long-running task completes it updates the stored model with the
+    updated values. The model update triggers an event to say the model has been
+    updated.
+
+    This triggers a client task to retrieve and update the browser model with the
+    new values.
+end legend
+
+participant "ngOT client" as client
+participant "event socket" as socket
+participant "event queue" as queue
+client -> socket : subscribe
+client -> queue : batch request for long running task
+queue -> task : start
+task -> store : retrieve project
+task -> task : process
+task -> store : save updates
+task -> socket : task complete event
+socket -> client : publish
+client -> store : retrieve
+@enduml

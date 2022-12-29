@@ -1,5 +1,8 @@
 
    @startuml
+   box
+   Fred -> Alice
+   end box
    skinparam backgroundColor #EEEBDC
    Alice -> Bob: Hi!
    Alice <- Bob: How are you?

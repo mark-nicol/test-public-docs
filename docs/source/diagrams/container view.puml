@@ -1,0 +1,33 @@
+@startuml ngOT Container View
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+!include DEVICONS/angular.puml
+!include DEVICONS/java.puml
+!include DEVICONS/redis.puml
+!include FONTAWESOME/users.puml
+
+LAYOUT_WITH_LEGEND()
+LAYOUT_LEFT_RIGHT()
+
+Container_Ext(archive_services, "Archive Services", "Java")
+Container_Ext(cat, "Source Catalogs", "XML or JSON services")
+ContainerDb_Ext(archive, "ALMA Data Archive", "Oracle DB", "Shared Data Archive of APDM Entities")
+
+Person(astronomer, "Users", "Astronomers wishing  to create a proposal for the ALMA OT", "users")
+System_Boundary(ngOT, "ng Observing Tool") {
+    Container(ngot_spa, "ngOT Client Application", "Javascript, Angular, D3", "Main interface that the user interacts with", "angular")
+    Container(ngot_api, "ngOT Services", "Java / Spring Boot, Docker Containers", "API Gateway and Router together with the supporting services", "java")
+    ContainerDb(redis, "User  Store",  "Redis","Storage for projects currently being created or edited by users within the ngOT")
+    Rel(astronomer, ngot_spa, "Uses", "HTTPS")
+    Rel(ngot_api, cat, "Uses", "HTTPS")
+    Rel(ngot_spa, cat, "Uses", " HTTPS")
+    Rel(ngot_spa, ngot_api, "Uses", "JSON messages, REST API, over HTTPS")
+    Rel(ngot_api, redis, "Reads from and writes to", "JSON messages, REST API, over HTTPS")
+}
+
+Rel(ngot_api, archive_services, "Reads from and writes to", "XML messages SOAP services over HTTPs")
+Rel(archive_services, archive, "Read and Write Submitted Projects and Proposals", "SQL ODBC")
+
+@enduml
