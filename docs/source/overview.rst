@@ -10,7 +10,7 @@ The Next Generation OT consists of the following parts
 | Users                    | There are two main groups of users of the ngOT:                                           |
 |                          |                                                                                           |
 |                          | * Astronomers wishing to create a proposal for                                            |
-|                          |   the ALMA OT"                                                                            |
+|                          |   the ALMA OT                                                                             |
 |                          |                                                                                           |
 |                          | * Staff at the ALMA Observatory managing accepted                                         |
 |                          |   observing proposals through their proposal lifecycle                                    |

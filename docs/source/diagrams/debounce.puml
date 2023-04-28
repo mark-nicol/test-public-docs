@@ -1,0 +1,17 @@
+@startuml
+
+
+
+participant Component as comp
+participant "proposal.service" as ps
+
+participant _saveInstanceDistinctUntilChangedSubscription
+
+comp -> ps : loadedProposal$.next(newProposal)
+ps -> ps : subscribe ()
+emitter ->
+
+
+
+
+@enduml

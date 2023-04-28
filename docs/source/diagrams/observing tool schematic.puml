@@ -1,0 +1,36 @@
+@startuml
+
+frame Browser {
+ frame "ngOT Client" {
+
+    agent "Angular\nServices" as AS
+
+
+ }
+}
+frame "ngOT Services" {
+    agent "Zuul Gateway" as ZG
+    agent "Eureka" as E
+    agent "<<Java Microservice>>\nApplication Service" as JAS
+    agent "<<Java Microservice>>\nWeb Service Broker" as JWS
+    agent "<<Java Microservice>>\nData Service" as JDS
+
+
+    ZG --> JAS
+    ZG -left-> E : Service\nLook-up
+    ZG --> JWS
+    JAS --> JAS : Service to\n Service calls
+    JAS .up.> E : Register
+    JDS .up.> E : Register
+    JWS .up.> E : Register
+    JAS --> JDS
+}
+
+database "User\nStore"  as US
+agent "Web Services" as WS
+  JWS -down-> WS : SOAP Request or\nREST API depending on service
+  AS -right-> ZG: REST Requests
+  JDS --> US
+
+
+@enduml

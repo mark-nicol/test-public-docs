@@ -1,0 +1,43 @@
+@startuml
+left to right direction
+
+package "docker image" {
+
+ component "Java Microservice" {
+   component "Eureka Client" as EC {
+     port " " as ec_out
+   }
+
+   component "Spring Service" {
+   component "REST Controller" as RC {
+     port " " as REST_in
+   }
+   component "Request Handler" as RH {
+    [Service Wrapper\n(COT View)] as W
+    rectangle "Classic OT\n Components" #line.dashed {
+     [COT Model] as CM
+     [COT Controller] as C
+    }
+   }
+  [Type\nConverters] as TC
+
+  }
+  }
+}
+
+[Client] as AC
+
+AC --> REST_in : "1:Request"
+W -up-> CM : "4:populates"
+RC ---> W : "2:Request"
+W <-left-> TC : "3,8: converts"
+W -down-> C : "5:executes\n methods"
+
+C -right-> CM : "6:updates"
+CM .up.> W : "7:results"
+
+W ...> RC : "9:responsse"
+
+ec_out -up-> [Eureka] : Register
+
+@enduml

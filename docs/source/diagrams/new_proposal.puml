@@ -1,0 +1,123 @@
+@startuml
+
+participant ListItem as A
+participant Project as B
+participant Proposal as C
+participant Attachment as D
+
+entity client
+participant eis as "entity-id-service"
+participant ps as "project-service"
+participant ats as "attachment-service"
+participant cps as "control-and-performance-service"
+participant tjs as "technical-justification-service"
+participant tes as "time-estimates-service"
+
+== Setup a new project ==
+client -> A: create
+activate A
+client -> eis: GET \entityID\n//Request new ID for a project//
+note left
+{"state":"000"}
+end note
+eis --> client: projectEntityId
+note left
+fakeuid://X000/...
+end note
+client -> eis: ""GET \entityID""\n//Request new ID for a proposal//
+note left
+{"state":"001"}
+end note
+eis --> client: proposalEntityID//
+note left
+fakeuid://X001/...
+end note
+client -> A : aotId = projectEntityID
+client -> A : obsProjectEntityId = projectEntityID
+client -> A : obsProposalEntityId = proposalEntityID
+
+'create a project
+
+client -> B: create
+activate B
+client -> B : obsProjectEntity.entityId = projectEntityID;
+client -> B : obsProposalRef.entityId = proposalEntityID;
+client -> B : obsProgram.obsPlan.obsProjectRef.entityId = projectEntityID;
+
+client -> eis: GET \entityIDsSame\n//Request 3 part IDs//
+note left
+{state: "017", count: 3}
+end note
+eis --> client : //List of 3 partIds//
+note left
+["X890866565","X-327053058","X358441362"]
+end note
+client -> B : obsProgram.obsPlan.obsProjectRef.partId = id1
+client -> B : obsProposalRef.partId = id2
+client -> B : obsProgram.obsPlan.entityPartId = id3;
+
+'create a proposal
+client -> C: create
+activate C
+client -> eis:  GET \entityID\n//Request a new part ID//
+note left
+{state: "017"}
+end note
+eis --> client: partID
+note left
+fakeuid://X017/...
+end note
+client -> C : obsProjectEntity.partId = partID;
+client -> C : obsProposalRef.partId= partID;
+client -> C : obsPlan.entityPartId = partID;
+
+
+
+'create an attachment
+client -> D : create
+activate D
+client -> eis:  GET \entityID\n//Request a new attachment ID//
+note left
+{"state":"002"}
+end note
+
+eis --> client: entityID
+note left
+fakeuid://X002/...
+end note
+
+client -> D  : obsAttachmentEntity.entityId = entityID;
+
+'save the project
+client -> ps: PUT \project\n//save the project and the list item//
+note left
+{
+  "listItem": {...},
+  "project": {...}
+}
+end note
+client -> ps: PUT \proposal\n//save the proposal//
+note left
+{
+  "listItem": {...},
+  "proposal": {...}
+}
+end note
+client -> ats:  PUT \attachment\n//save the attachment//
+note left
+{
+  "listItem": {...},
+  "attachment": {...}
+}
+end note
+
+
+== Save is repeated when first created  ==
+client -> ps: PUT \project\n//save the project with the attachment//
+client -> ps: PUT \proposal\n//save the proposal with the attachment//
+client -> ats: PUT \attachment\n//save the attachment//
+== Retrieve the initial secondary information ==
+client -> cps: POST \controlAndPerformanceData\n//get the initial C&P data//
+client -> tjs: POST \allTechnicalJustifications\n//retrieve the initial TJs//
+client -> tes: \timeEstimates\n//retrieve the initial time estimates//
+@enduml

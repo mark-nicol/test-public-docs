@@ -1,0 +1,85 @@
+@startuml
+
+package Package1 {
+
+  package 1A {
+
+    rectangle "Short" as rs {
+    }
+
+    rectangle "Long long text" as rl {
+    }
+
+    rs -[hidden]d-> rl
+  }
+
+  package 1B {
+
+    rectangle "Foo" {
+    }
+  }
+
+  1A -[hidden]-> 1B
+}
+
+package Package2 {
+
+  package 2A {
+
+    rectangle "Bar" {
+    }
+  }
+}
+
+package Package3 {
+}
+
+Package1 -[hidden]> Package2
+Package2 -[hidden]> Package3
+left to right direction
+package  components {
+  [spectral-type] as stype
+  [spectral-rest-frequency] as srest
+  [spectral-representative-frequency] as srep
+}
+
+[spectral-controller] as sc_service
+
+package  services {
+  [baseband-service] as bbs
+  [target-service] as tss
+  [spectral-service] as sps
+  [science-goal-service] as sgs
+  [project-service] as ps
+}
+
+
+stype ---> sc_service : subscribeToSpectralTypeChanges()
+srep ---> sc_service : subscribeToRepresentativeFrequencyChanges()
+srest ---> sc_service : subscribeToRestFrequencyChanges()
+
+stype --> sc_service : updateSpectralType
+srep --> sc_service : updateRepresentativeFrequency
+srest --> sc_service : updateRestFrequency
+
+sc_service ---> bbs : subscribeToBasebandListChanges
+sc_service ---> bbs : subscribeToReceiverListChanges
+sc_service ---> bbs : subscribeToTuningsListChanges
+
+sc_service ---> tss : subscribeToTargetChanges
+sc_service ---> sps : subscribeToRepresentativeFrequencyChanges
+sc_service ---> sps : subscribeToSkyFrequencyChanges
+
+sps --> bbs : loadStandardReceivers
+sps --> bbs : loadBasebands
+sps --> bbs : loadTunings
+
+sgs --> ps
+
+tss --> sgs
+sgs --> ps
+
+tss --> ps
+sps --> ps
+
+@enduml

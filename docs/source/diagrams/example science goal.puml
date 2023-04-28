@@ -1,0 +1,320 @@
+@startjson
+{
+    "scienceGoals": [
+        {
+            "@type": "ScienceGoalT",
+            "calibrationSetupParameters": {
+                "selection": "system",
+                "positionalAccuracy": "Standard",
+                "isDGCOverride": false,
+                "calibrationTargetParameters": [
+                    {
+                        "index": 0,
+                        "intendedUse": "Amplitude",
+                        "nonSiderealMotion": false,
+                        "solarSystemObject": "Unspecified",
+                        "sourceCoordinates": {
+                            "longitude": {
+                                "value": 0,
+                                "unit": "deg"
+                            },
+                            "latitude": {
+                                "value": 0,
+                                "unit": "deg"
+                            },
+                            "fieldName": "",
+                            "system": "ICRS",
+                            "type": "RELATIVE"
+                        },
+                        "sourceName": "",
+                        "calibrationTargetProperties": [],
+                        "sourceVelocity": {
+                            "referenceSystem": "lsrk",
+                            "dopplerCalcType": "OPTICAL",
+                            "centerVelocity": {
+                                "unit": "m/s",
+                                "value": 0
+                            }
+                        }
+                    },
+                    {
+                        "index": 0,
+                        "intendedUse": "Bandpass",
+                        "nonSiderealMotion": false,
+                        "solarSystemObject": "Unspecified",
+                        "sourceCoordinates": {
+                            "longitude": {
+                                "value": 0,
+                                "unit": "deg"
+                            },
+                            "latitude": {
+                                "value": 0,
+                                "unit": "deg"
+                            },
+                            "fieldName": "",
+                            "system": "ICRS",
+                            "type": "RELATIVE"
+                        },
+                        "sourceName": "",
+                        "calibrationTargetProperties": [],
+                        "sourceVelocity": {
+                            "referenceSystem": "lsrk",
+                            "dopplerCalcType": "OPTICAL",
+                            "centerVelocity": {
+                                "unit": "m/s",
+                                "value": 0
+                            }
+                        }
+                    },
+                    {
+                        "index": 0,
+                        "intendedUse": "Phase",
+                        "nonSiderealMotion": false,
+                        "solarSystemObject": "Unspecified",
+                        "sourceCoordinates": {
+                            "longitude": {
+                                "value": 0,
+                                "unit": "deg"
+                            },
+                            "latitude": {
+                                "value": 0,
+                                "unit": "deg"
+                            },
+                            "fieldName": "",
+                            "system": "ICRS",
+                            "type": "RELATIVE"
+                        },
+                        "sourceName": "",
+                        "calibrationTargetProperties": [],
+                        "sourceVelocity": {
+                            "referenceSystem": "lsrk",
+                            "dopplerCalcType": "OPTICAL",
+                            "centerVelocity": {
+                                "unit": "m/s",
+                                "value": 0
+                            }
+                        }
+                    }
+                ],
+                "querySources": [],
+                "forcedDGCStrategy": "NONE"
+            },
+            "estimated12MTime": {
+                "value": 0,
+                "unit": "s"
+            },
+            "estimated7MTime": {
+                "value": 0,
+                "unit": "s"
+            },
+            "estimatedACATime": {
+                "value": 0,
+                "unit": "s"
+            },
+            "estimatedTPTime": {
+                "value": 0,
+                "unit": "s"
+            },
+            "estimatedTotalTime": {
+                "value": 0,
+                "unit": "s"
+            },
+            "isDescoped": false,
+            "isResubmission": false,
+            "mode": "Standard",
+            "name": "New Science Goal 1",
+            "note": "",
+            "performanceParameters": {
+                "monitoringConstraints": [],
+                "temporalParameters": [],
+                "visitConstraints": [],
+                "acceptableAngularResolution": {
+                    "value": 0,
+                    "unit": "deg",
+                    "userUnit": "arcsec"
+                },
+                "desiredACASensitivity": {
+                    "value": 0,
+                    "unit": "Jy",
+                    "userUnit": "Jy"
+                },
+                "desiredAngularResolution": {
+                    "value": 0,
+                    "unit": "deg",
+                    "userUnit": "arcsec"
+                },
+                "desiredDynamicRange": 0,
+                "desiredLargestScale": {
+                    "value": -1,
+                    "unit": "arcsec"
+                },
+                "desiredSDSensitivity": {
+                    "value": 0,
+                    "unit": "Jy",
+                    "userUnit": "Jy"
+                },
+                "desiredSensitivity": {
+                    "value": 0,
+                    "unit": "Jy",
+                    "userUnit": "Jy"
+                },
+                "desiredSensitivityFrequencyMeasure": "RepresentativeWindowResolution",
+                "desiredSensitivityReferenceFrequencyWidth": {
+                    "value": 0,
+                    "unit": "GHz",
+                    "userUnit": "MHz"
+                },
+                "desiredTPSensitivity": {
+                    "value": 0,
+                    "unit": "Jy",
+                    "userUnit": "Jy"
+                },
+                "desiredTime": {
+                    "value": 0,
+                    "unit": "min"
+                },
+                "isPointSource": false,
+                "isScheduleConstrained": false,
+                "isSimultaneous12And7": false,
+                "isTimeConstrained": false,
+                "needsMoreTime": false,
+                "representativeFrequency": {
+                    "value": 1,
+                    "unit": "GHz"
+                },
+                "resolutionOption": "Range",
+                "timingConstraintsType": "None",
+                "useACA": false,
+                "useTP": false
+            },
+            "requiredReceiverBands": [],
+            "resubmissionOfName": "",
+            "expertParameters": [],
+            "resubmissionOfOusStatusUid": "",
+            "spectralSetupParameters": {
+                "representativeFrequency": {
+                    "value": 1,
+                    "unit": "GHz"
+                },
+                "userRepresentativeFrequency": false,
+                "singleContinuumFrequency": {
+                    "value": 0,
+                    "unit": "GHz"
+                },
+                "scienceSpectralWindowsAndSpectralScen": [],
+                "advancedSpectralSetup": {
+                    "fastMode": false,
+                    "sideBandSeparation": false
+                },
+                "polarisation": "DOUBLE",
+                "type": "full",
+                "overlaidSpectralLines": [],
+                "singleContinuumCorrelatorMode": "lowRes"
+            },
+            "targetParameters": [
+                {
+                    "ephemerisFileName": "No File Uploaded",
+                    "expectedProperties": {
+                        "expectedPeakFluxDensity": {
+                            "value": 0,
+                            "unit": "Jy"
+                        },
+                        "desiredPolarizationPercentage": 0,
+                        "expectedLineWidth": {
+                            "value": 0,
+                            "unit": "GHz",
+                            "userUnit": "km/s"
+                        },
+                        "referenceFrequency": {
+                            "value": 0,
+                            "unit": "GHz"
+                        },
+                        "expectedPeakLineFluxDensity": {
+                            "value": 0,
+                            "unit": "Jy"
+                        },
+                        "expectedSpectralDynamicRange": 0,
+                        "expectedImageDynamicRange": 0,
+                        "desiredLinePolarizationPercentage": 0,
+                        "desiredCircularPolarizationPercentage": 0,
+                        "desiredLineCircularPolarizationPercentage": 0,
+                        "isPassivePhasing": false,
+                        "solarActivityLevel": "None"
+                    },
+                    "circlesAndEllipsesAndPolygons": [
+                        {
+                            "centre": {
+                                "longitude": {
+                                    "value": 0,
+                                    "unit": "arcsec"
+                                },
+                                "latitude": {
+                                    "value": 0,
+                                    "unit": "arcsec"
+                                },
+                                "fieldName": "New Source",
+                                "system": "ICRS",
+                                "type": "RELATIVE"
+                            },
+                            "name": "New Source",
+                            "@type": "SinglePointT"
+                        }
+                    ],
+                    "solarMappingDiameter": {
+                        "value": 0,
+                        "unit": "deg"
+                    },
+                    "index": 0,
+                    "isMosaic": false,
+                    "nonSiderealMotion": false,
+                    "parallax": {
+                        "value": 0,
+                        "unit": "mas"
+                    },
+                    "pmDec": {
+                        "value": 0,
+                        "unit": "mas/yr"
+                    },
+                    "pmRA": {
+                        "value": 0,
+                        "unit": "mas/yr"
+                    },
+                    "sdReferencePositions": [],
+                    "solarSystemObject": "Unspecified",
+                    "sourceCoordinates": {
+                        "longitude": {
+                            "value": 0,
+                            "unit": "deg"
+                        },
+                        "latitude": {
+                            "value": 0,
+                            "unit": "deg"
+                        },
+                        "fieldName": "",
+                        "system": "ICRS",
+                        "type": "RELATIVE"
+                    },
+                    "sourceEphemeris": "",
+                    "sourceName": "New Source",
+                    "sourceVelocity": {
+                        "referenceSystem": "lsrk",
+                        "dopplerCalcType": "RELATIVISTIC",
+                        "centerVelocity": {
+                            "unit": "km/s",
+                            "value": 0
+                        }
+                    },
+                    "type": "F_MultiplePoints",
+                    "@type": "TargetParametersT"
+                }
+            ],
+            "technicalJustifications": [],
+            "userPriority": 0
+        }
+    ],
+    "indexes": [
+        0
+    ],
+    "proposalType": "S"
+}
+@endjson
